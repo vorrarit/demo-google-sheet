@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.5</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>demo-google-sheet</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>demo-google-sheet</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<kotlin.version>1.4.32</kotlin.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-reflect</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib-jdk8</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.30.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-jetty</artifactId>
+			<version>1.30.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.auth</groupId>
+			<artifactId>google-auth-library-credentials</artifactId>
+			<version>0.25.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.auth</groupId>
+			<artifactId>google-auth-library-oauth2-http</artifactId>
+			<version>0.25.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-sheets</artifactId>
+			<version>v4-rev581-1.25.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-apache-v2</artifactId>
+			<version>1.39.2</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+		<testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-maven-plugin</artifactId>
+				<configuration>
+					<args>
+						<arg>-Xjsr305=strict</arg>
+					</args>
+					<compilerPlugins>
+						<plugin>spring</plugin>
+						<plugin>jpa</plugin>
+					</compilerPlugins>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-allopen</artifactId>
+						<version>${kotlin.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-noarg</artifactId>
+						<version>${kotlin.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
